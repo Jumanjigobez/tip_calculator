@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>SPLI_TTER | Tip calculator app</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+
+</head>
+<body>
+
+  <main>
+    <section id="title_part">
+      <div>
+        <h1>SPLI<br>TTER</h1>
+      </div>
+    </section>
+
+    <section id="calc_part">
+      <div class="column">
+
+        <div class="part_1">
+          <div>
+            <h2>Bill</h2>
+            <input type="number" name="bill_amount" id="bill_amount" placeholder="0" class="bill_amount">
+            <img src="images/icon-dollar.svg" alt="dollar sign" class="dollar_sign">
+          </div>
+          
+           <div>
+            <h2>Select Tip %</h2>
+
+            <div class="btns">
+              <button class="btn tip_btn" onclick="tip(5,0)">5%</button>
+              <button class="btn tip_btn" onclick="tip(10,1)">10%</button>
+              <button class="btn tip_btn" onclick="tip(15,2)">15%</button>
+              <button class="btn tip_btn" onclick="tip(25,3)">25%</button>
+              <button class="btn tip_btn" onclick="tip(50,4)">50%</button>
+
+              <input type="text" name="tip_amount" id="tip_amount" onkeyup="tip(this.value,5)" placeholder="Custom">
+            </div>
+          </div>
+
+           <div>
+            <h2>Number of People</h2>
+            <input type="number" name="people" id="people" placeholder="0" class="people">
+            <img src="images/icon-person.svg" alt="avatar icon" class="avatar">
+          </div>
+
+        </div>
+
+        <div class="part_2">
+          <div class="tip_amount">
+            <div>
+              <h3>Tip Amount <br> <span>/ person</span></h3>
+            </div>
+            <div>
+              <p class="total_tip">$0.00</p>
+            </div>
+          </div>
+
+          <div class="total_amount">
+             <div>
+              <h3>Total <br> <span>/ person</span></h3>
+            </div>
+            <div>
+              <p class="total_result">$0.00</p>
+            </div>
+          </div>
+
+          <div class="reset_part">
+              <button class="btn reset_btn" onclick="reset()">Reset</button>
+          </div>
+        </div>
+
+          
+      </div>
+    </section>
+
+    <footer id="footer">
+      <small>Coded By <a href="https://www.jumanjigobez.github.io/personal_portfolio" target="_blank">Jumanji</a></small>
+    </footer>
+  </main>
+
+  <script src="script/script.js"></script>
+
+</body>
+</html>

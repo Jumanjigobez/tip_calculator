@@ -1,0 +1,267 @@
+:root{
+	--Strong-cyan: hsl(172, 67%, 45%);
+
+	--Very-dark-cyan: hsl(183, 100%, 15%);
+	--Dark-grayish-cyan: hsl(186, 14%, 43%);
+	--Grayish-cyan: hsl(184, 14%, 56%);
+
+	--Light-grayish-cyan: hsl(185, 41%, 84%);
+
+	--Very-light-grayish-cyan: hsl(189, 41%, 97%);
+	--White: hsl(0, 0%, 100%);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Space Mono', monospace;
+}
+
+body{
+	background: var(--Light-grayish-cyan);
+	padding: 3rem 10rem;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+main{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#title_part div h1{
+	font-size: 20px;
+	letter-spacing: 5px;
+	color: var(--Dark-grayish-cyan);
+
+}
+
+/*Calc part styling*/
+#calc_part{
+	width: 95%;
+	margin-top: 3rem;
+	background: var(--White);
+	padding: 1.5rem;
+	border-radius: 15px;
+}
+
+.column{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.column .part_1{
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+
+}
+.column .part_1 div:nth-child(1){
+	margin-top: 0;
+	position: relative;
+}
+.column .part_1 div:nth-child(3){
+	position: relative;
+}
+.column .part_1 div{
+	margin-top: 25px;
+}
+.column .part_1 div h2{
+	font-size: 15px;
+	color: var(--Dark-grayish-cyan);
+}
+
+#bill_amount,#people{
+	margin-top: 5px;
+	margin-left: 5px;
+	width: 100%;
+	text-align: right;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: var(--Very-light-grayish-cyan);
+	height: 25px;
+	color: var(--Very-dark-cyan);
+	font-size: 24px;
+	font-weight: 700;
+	padding: 1rem 0rem;
+	transition: 0.2s linear;
+	
+}
+#bill_amount:focus,#people:focus,#tip_amount:focus{
+	outline: none;
+	border: 1px solid var(--Strong-cyan);
+	border-radius: 5px;
+}
+#bill_amount::placeholder,#people::placeholder{
+	color: var(--Light-grayish-cyan);
+	font-size: 20px;
+}
+.dollar_sign,.avatar{
+	position: absolute;
+	top: 55%;
+	left: 10%;
+}
+
+.btns{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+	grid-gap: 1rem;
+}
+@media (min-width: 1200px){/*For larger screens*/
+	body{
+		padding-top: 10rem; 
+	}
+	#calc_part{
+		width: 80%;
+	}
+	.btns{
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	}
+}
+.tip_btn{
+	border: none;
+	background: var(--Very-dark-cyan);
+	color: var(--Very-light-grayish-cyan);
+	text-align: center;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.2s linear;
+}
+.tip_btn:hover{
+	background: var(--Light-grayish-cyan);
+	color: var(--Very-dark-grayish-cyan);
+}
+#tip_amount{
+	width: 100%;
+	text-align: right;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: var(--Very-light-grayish-cyan);
+	height: 25px;
+	color: var(--Very-dark-cyan);
+	font-size: 20px;
+	font-weight: 700;
+	padding: 1.5rem 0.2rem;
+	transition: 0.2s linear;
+}
+#tip_amount::placeholder{
+	color: var(--Dark-grayish-cyan);
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.column .part_2{
+	flex-basis: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: var(--Very-dark-cyan);
+	width: 100%;
+	padding: 2rem;
+	border-radius: 15px;
+}
+.column .part_2 .tip_amount{
+	flex-basis: 30%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.column .part_2 .total_amount{
+	flex-basis: 60%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.column .part_2 .tip_amount div h3,.column .part_2 .total_amount div h3{
+	font-size: 14px;
+	color: var(--Very-light-grayish-cyan);
+}
+.column .part_2 .tip_amount div h3 span,.column .part_2 .total_amount div h3 span{
+	font-size: 10px;
+	color: var(--Dark-grayish-cyan);
+}
+.column .part_2 .total_tip,.column .part_2 .total_result{
+	color: var(--Strong-cyan);
+	font-size: 35px;
+	text-align: right;
+	font-weight: 700;
+}
+.reset_btn{
+	border: none;
+	background: var(--Strong-cyan);
+	color: var(--Very-dark-cyan);
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0.2rem 1rem;
+	border-radius: 3px;
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.2s linear;
+}
+.reset_btn:hover{
+	background: var(--Light-grayish-cyan);
+	color: var(--Very-dark-grayish-cyan);
+}
+
+/*Footer part*/
+#footer{
+	padding-top: 1rem;
+}
+#footer small a{
+	text-decoration: none;
+	color: var(--Dark-grayish-cyan);
+	transition: 0.2s linear; 
+}
+#footer small a:hover{
+	color: var(--Very-dark-cyan);
+}
+
+@media (max-width: 800px){/*For medium screens*/
+	body{
+		
+		padding: 2rem 0rem;
+	}
+	main{
+		display: block;
+	}
+	#title_part div h1{
+		text-align: center;
+
+	}
+	#calc_part{
+		width: 100%;
+		border-radius: 15px 15px 0px 0px;
+	}
+	.column{
+		flex-direction: column;
+	}
+	#bill_amount,#person{
+		height: 50px;
+		padding: 1rem;
+	}
+	.btns{
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
+	#tip_amount,#people{
+		padding: 1.5rem 0.5rem;
+	}
+	.column .part_2{
+		margin-top: 2rem;
+	}
+	.reset_btn{
+		margin-top: 25px;
+	}
+	#footer{
+		text-align: center;
+	}
+}
